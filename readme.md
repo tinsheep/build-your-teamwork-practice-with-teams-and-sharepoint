@@ -1,6 +1,6 @@
 # Files for Building your teamwork practice with Teams and SharePoint workshop
 
-#Included Labs
+## Included Labs
 
 1. Teams Governance and Onboarding
 1. Site Designs and Site Scripts
