@@ -7,7 +7,6 @@
 - Microsoft Teams Powershell module
 - Skype for Business Online PowerShell module
 
-
 Install Azure AD Preview Module - currently, the preview module is required for the Directory Setting Templates. For more information see - <https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0>
 
 '''PowerShell
