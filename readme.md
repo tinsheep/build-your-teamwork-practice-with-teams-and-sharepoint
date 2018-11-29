@@ -1,4 +1,4 @@
-# Files for Building your teamwork practice with Teams and SharePoint workshop
+# Day 2 IT Pro track files for Building your Teamwork practice with Teams and SharePoint Workshop
 
 ## Included Labs
 
