@@ -1,6 +1,10 @@
 # Setup your environment for PowerShell
 
+## Add SharePoint module
+
 [Getting started with SharePoint Online Management Shell](https://docs.microsoft.com/en-us/powershell/sharepoint/sharepoint-online/connect-sharepoint-online?view=sharepoint-ps)
+
+## Add additional modules:
 
 - Azure AD Preview module
 - Microsoft Teams Powershell module
