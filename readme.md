@@ -20,6 +20,6 @@
     1. Create modern pages approval flow using "Submit SharePoint page for approval" template
     1. Hacker edition: Enhance lab 2 by adding a nag email for an approval delay.
 1. PowerApps
-    1. Create the ShoutOuts PowerApp, "make it our own" and add the PowerApp to a Team site.
+    1. Explore new Office PowerApps Templates series and create the ShoutOuts PowerApp, "make it our own" and add the PowerApp to a Team site.
 
     *Note: presentations courtesy of edhild - <https://github.com/Microsoft/MTC_ModernSharePointWorkshop.git>*
