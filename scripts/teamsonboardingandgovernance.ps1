@@ -11,7 +11,7 @@ $sfbSession = New-CsOnlineSession -Credential $userCredential
 Import-PSSession $sfbSession
 
 #get the unified group template
-$template = Get-AzureADDirectorySettingTemplate | where-object {$_.displayname -eq “Group.Unified”}
+$template = Get-AzureADDirectorySettingTemplate | where-object {$_.displayname -eq "Group.Unified"}
 $setting = $template.CreateDirectorySetting()
 
 New-AzureADDirectorySetting -DirectorySetting $setting
