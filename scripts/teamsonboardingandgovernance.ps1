@@ -1,14 +1,16 @@
 
 
 #Connect to: Msol, AzureAD Preview, Skype for Business, Microsoft Teams Powershell Modules
-Connect-MsolService
 $credential = get-credential
+$credential.Password.MakeReadOnly()  # Prevent commands from clearing the password
+Connect-MsolService -Credential $credential
+Connect-AzureAD -Credential $credential
+Write-Host After Connect-AzureAD $credential.Password.Length
 Connect-MicrosoftTeams -credential $credential
-Connect-AzureAD 
 Import-Module SkypeOnlineConnector
-$userCredential = Get-Credential
-$sfbSession = New-CsOnlineSession -Credential $userCredential
+$sfbSession = New-CsOnlineSession -Credential $credential
 Import-PSSession $sfbSession
+
 
 #get the unified group template
 $template = Get-AzureADDirectorySettingTemplate | where-object {$_.displayname -eq "Group.Unified"}
@@ -28,7 +30,7 @@ Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property D
 #View the group settings:
 $settings = Get-AzureADDirectorySetting
 $settings.Values | fl
- 
+
 #Set lifecycle policy for group lifetime for a year
 New-AzureADMSGroupLifecyclePolicy -GroupLifetimeInDays 365 -ManagedGroupTypes All -AlternateNotificationEmails "admin@M365x176916.onmicrosoft.com"
 Get-AzureADMSGroupLifecyclePolicy
@@ -45,7 +47,7 @@ Grant-CsTeamsMeetingPolicy -PolicyName "Pilot Messaging" -Identity "LeeG@M365x17
 
 
 #Provision a team for your pilot users
-$team = New-Team -DisplayName "All Company" -Alias companyteam -AccessType Private -Classification "Confidential" -Description "Broad team for full company" -
+$team = New-Team -DisplayName "All Company" -Alias companyteam -AccessType Private -Classification "Confidential" -Description "Broad team for full company"
 New-TeamChannel -GroupId $team.GroupId -DisplayName "Announcements" -Description "All company announcements"
 New-TeamChannel -GroupId $team.GroupId -DisplayName "Free food"
 New-TeamChannel -GroupId $team.GroupId -DisplayName "HR"
