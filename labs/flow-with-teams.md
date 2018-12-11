@@ -56,7 +56,7 @@ Some governance policies might not allow their Teams members create channels in 
 
     * Click on **Add an action** then search for "Start an approval". Once added, fill out the approval fields as shown below. Click on **Dynamic content** to add the Channel Name and Link to item. In the Assigned to field enter the team owner(s).
 
-        ![screenshot of approval action](./images/approval.png)
+        ![screenshot of approval action](./images/Approval.png)
 
     * Click on **Add an action** then search for the "Condition Control". Once added, click on dynamic content to select Response, select "is equal to" from the dropdown and then type in Approve. Click on Add an action underneath the If yes section. Search for Teams then select **Create a channel**. Select the Team for the Team Id field and then select Channel Name from the dynamic content for the Display Name.
 
