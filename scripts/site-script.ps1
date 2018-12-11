@@ -1,6 +1,7 @@
 Import-Module Microsoft.Online.SharePoint.Powershell
 $usercredential = Get-Credential
 
+#Connect to the admin site Url for your tenant - replace mipancir with your tenant name
 Connect-SPOService -Url "https://mipancir-admin.sharepoint.com" -Credential $usercredential
 
 Connect-PnPOnline -Url "https://mipancir.sharepoint.com" -Credentials $usercredential

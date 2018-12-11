@@ -1,8 +1,26 @@
 # Setup your environment for PowerShell
 
+## Connect to Office 365 Services
+
+If this is the first time you are running PowerShell on your machine to connect to Office 365 Services, you may need to install the [Microsoft Online Services Sign-In Assistant](https://www.microsoft.com/en-us/download/details.aspx?id=41950).
+
+Additionally, make sure you have the MSOnline module installed. Open an elevated Windows PowerShell command prompt (run Windows PowerShell as an administrator). Install the MSOnline module with the following command:
+
+'''PowerShell
+
+    Install-Module MSOnline
+
+'''
+
 ## Add SharePoint module
 
 [Getting started with SharePoint Online Management Shell](https://docs.microsoft.com/en-us/powershell/sharepoint/sharepoint-online/connect-sharepoint-online?view=sharepoint-ps)
+
+'''PowerShell
+
+    Install-Module -Name Microsoft.Online.SharePoint.PowerShell
+
+'''
 
 ## Add additional modules:
 

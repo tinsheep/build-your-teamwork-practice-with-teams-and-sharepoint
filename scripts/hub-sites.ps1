@@ -2,6 +2,7 @@
 Import-Module Microsoft.Online.SharePoint.Powershell
 $usercredential = Get-Credential
 
+#Connect to SPO Service and PnPOnline - replace mipancir with your own tenant name below
 Connect-SPOService -Url "https://mipancir-admin.sharepoint.com" -Credential $usercredential
 
 Connect-PnPOnline -Url "https://mipancir.sharepoint.com" -Credentials $usercredential
@@ -20,6 +21,7 @@ Add-PnPFile -Path "C:\dev\git\building-your-teamwork-practice-with-teams-and-sha
 Set-SPOHubSite -Identity $hubsiteUrl -Description "Main hub site for collaboration on marketing activities across Contoso" -LogoUrl ($hubsiteUrl + "/SiteAssets/contoso.png")
 
 #Run the Grant-SPOHubSiteRights cmdlet to grant a user rights to the marketing hub site.
+#You will want to replace this with your own tenant principals.
 Grant-SPOHubSiteRights -Identity $hubsiteUrl -Principals "michaelp@tinsheep.com" -Rights Join
 
 #create a new site to associate with the hub
@@ -33,5 +35,6 @@ Get-SPOHubSite -Identity $hubsiteUrl
 
 #clean up
 Remove-SPOHubSiteAssociation -Site $childsiteUrl
+#remember to replace the -Principals switch with your own principals.
 Revoke-SPOHubSiteRights -Identity $hubsiteUrl -Principals "michaelp@tinsheep.com"
 Unregister-SPOHubSite -Identity $hubsiteUrl

@@ -3,9 +3,18 @@
 
 ## Prerequisites - Which Modules do you need?
 
+- MSOnline module
 - Azure AD Preview module
 - Microsoft Teams Powershell module
 - Skype for Business Online PowerShell module
+
+If this is your first time connecting to Office 365 with PowerShell, you will need to install the MSOnline module. Open an elevated Windows PowerShell command prompt (run Windows PowerShell as an administrator). Install the MSOnline module with the following command:
+
+'''PowerShell
+
+    Install-Module MSOnline
+
+'''
 
 Install Azure AD Preview Module - currently, the preview module is required for the Directory Setting Templates. For more information see - <https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0>
 

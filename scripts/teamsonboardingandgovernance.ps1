@@ -16,8 +16,9 @@ Import-PSSession $sfbSession
 $template = Get-AzureADDirectorySettingTemplate | where-object {$_.displayname -eq "Group.Unified"}
 $setting = $template.CreateDirectorySetting()
 
+#If you tenant is new and you don't have any directory settings yet, a new directory setting will need to be created.
 New-AzureADDirectorySetting -DirectorySetting $setting
-$setting["UsageGuidelinesUrl"] = "https://guidelines.contoso.com"
+
 $setting["UsageGuidelinesUrl"] = "https://guidelines.contoso.com"
 $setting["PrefixSuffixNamingRequirement"] = "GRP_[GroupName]"
 $setting["CustomBlockedWordsList"] = "Payroll,CEO,HR"
@@ -32,7 +33,8 @@ $settings = Get-AzureADDirectorySetting
 $settings.Values | fl
 
 #Set lifecycle policy for group lifetime for a year
-New-AzureADMSGroupLifecyclePolicy -GroupLifetimeInDays 365 -ManagedGroupTypes All -AlternateNotificationEmails "admin@M365x176916.onmicrosoft.com"
+#*** note: update AlternateNotificationEmails with your teanant email address below *** 
+New-AzureADMSGroupLifecyclePolicy -GroupLifetimeInDays 365 -ManagedGroupTypes All -AlternateNotificationEmails "admin@M365x695118.onmicrosoft.com"
 Get-AzureADMSGroupLifecyclePolicy
 #Review how those settings will now apply to users/groups on creation
 
@@ -43,7 +45,7 @@ New-CsTeamsMessagingPolicy -Identity "Pilot Messaging" -Description "Teams polic
 Set-CsTeamsMessagingPolicy -Identity "Pilot Messaging" -AllowGiphy $false -AllowStickers $false
 Get-CsTeamsMessagingPolicy -Identity "Pilot Messaging"
 #Capability is future:
-Grant-CsTeamsMeetingPolicy -PolicyName "Pilot Messaging" -Identity "LeeG@M365x176916.OnMicrosoft.com"
+Grant-CsTeamsMeetingPolicy -PolicyName "Pilot Messaging" -Identity "LeeG@M365x695118.OnMicrosoft.com"
 
 
 #Provision a team for your pilot users
